@@ -72,6 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "theme.scss",
               "styles.css"
             ],
             "scripts": [],
