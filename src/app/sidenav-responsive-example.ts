@@ -1,11 +1,13 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+
+/** @title Responsive sidenav */
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: 'sidenav-responsive-example',
+  templateUrl: 'sidenav-responsive-example.html',
+  styleUrls: ['sidenav-responsive-example.css'],
 })
-export class AppComponent  implements OnDestroy {
+export class SidenavResponsiveExample implements OnDestroy {
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
@@ -32,5 +34,10 @@ export class AppComponent  implements OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  shouldRun = true;
+  shouldRun = true; // /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 }
+
+
+/**  Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license */
