@@ -9,14 +9,17 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, SidenavResponsiveExample],
+  declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-   // RouterModule,
+ //   CommonModule,
+    AppRoutingModule,
+
     FormsModule,
     HttpClientModule,
     MatNativeDateModule,
