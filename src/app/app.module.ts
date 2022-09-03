@@ -8,11 +8,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 
+import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
-  declarations: [SidenavResponsiveExample],
+  declarations: [AppComponent, SidenavResponsiveExample],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+   // RouterModule,
     FormsModule,
     HttpClientModule,
     MatNativeDateModule,
@@ -20,6 +24,6 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [SidenavResponsiveExample],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
