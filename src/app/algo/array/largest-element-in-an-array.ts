@@ -15,6 +15,7 @@ export class LargestElementInAnArray {
         let codeLink: CodeLink = new CodeLink();
 
         codeLink.link = `https://www.geeksforgeeks.org/c-program-find-largest-element-array/`;
+        codeLink.displayName = 'GFG'
         
         LargestElementInAnArray.algoQadat = new AlgoQaData();
 

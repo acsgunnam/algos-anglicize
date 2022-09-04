@@ -15,5 +15,5 @@ export class AlgoQaData {
 export class CodeLink 
 {
     public link: string = '';
-    public displayNam : string = '';
+    public displayName : string = '';
 }

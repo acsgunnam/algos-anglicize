@@ -1,21 +1,30 @@
 <mat-toolbar color="primary" class="example-toolbar">
-	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	<button mat-icon-button (click)="isExpanded = !isExpanded">
+		<mat-icon>menu</mat-icon>
+	</button>
 	<h1 class="example-app-name">Nested Menus</h1>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
-	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+		(mouseleave)="mouseleave()">
 		<mat-nav-list>
 			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-				<span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+				<span class="full-width" *ngIf="isExpanded || isShowing">{{arrayAlogs.algosName}}</span>
 				<mat-icon mat-list-icon>home</mat-icon>
-				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+					expand_more</mat-icon>
 			</mat-list-item>
 			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-				<a mat-list-item href="...">Submenu Item 1</a>
-				<a mat-list-item href="...">Submenu Item 2</a>
+
+				<a mat-list-item (click)="question_click(algoQaData)"
+				*ngFor="let algoQaData of arrayAlogs.algoQandAnsdataArray; index as i; ">
+					{{algoQaData.question}}
+				</a>
+
 				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
 					<span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
-					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}"
+						*ngIf="isExpanded || isShowing">expand_more</mat-icon>
 				</mat-list-item>
 				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
 					<mat-list-item>SubSubmenu Item 1</mat-list-item>
@@ -23,12 +32,21 @@
 				</div>
 			</div>
 		</mat-nav-list>
-    <mat-nav-list>
-</mat-nav-list>
+		<mat-nav-list>
+		</mat-nav-list>
 	</mat-sidenav>
 
 	<div class="example-sidenav-content">
-		Main content that resizes properly
+		
+
+		<mat-nav-list>
+			
+			{{currentAlgoQaData.description}}
+
+			<a mat-list-item [href]="link.link" target="_blank" *ngFor="let link of currentAlgoQaData.links">
+			 {{link.displayName}} </a>
+		 </mat-nav-list>
+
 	</div>
 
 </mat-sidenav-container>
