@@ -1,7 +1,7 @@
-import { ArrayAlgos } from './array-algos';
+import { ArrayAlgosService } from './array-algos';
 
 describe('ArrayAlgos', () => {
   it('should create an instance', () => {
-    expect(new ArrayAlgos()).toBeTruthy();
+    expect(new ArrayAlgosService()).toBeTruthy();
   });
 });
