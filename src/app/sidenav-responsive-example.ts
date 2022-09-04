@@ -1,5 +1,7 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { ArrayAlgos } from './algo/array/service/array-algos';
+import { AlgoQaData } from './common/algo-qa-data';
 
 /** @title Responsive sidenav */
 @Component({
@@ -10,7 +12,7 @@ import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 export class SidenavResponsiveExample implements OnDestroy {
   mobileQuery: MediaQueryList;
 
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav : Map<number, AlgoQaData>;
 
   fillerContent = Array.from(
     {length: 50},
@@ -24,10 +26,26 @@ export class SidenavResponsiveExample implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  public algoDataMap:Map<number, AlgoQaData> = new Map<number, AlgoQaData>();
+
+  constructor(
+    changeDetectorRef: ChangeDetectorRef,
+     media: MediaMatcher,
+     arrayAlogs: ArrayAlgos
+     ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+
+
+
+    arrayAlogs.algoQandAnsdataArray.forEach((element, index, array)  => {
+      
+      element.tag = index;
+      this.algoDataMap.set(index, element);
+
+
+    });
   }
 
   ngOnDestroy(): void {
