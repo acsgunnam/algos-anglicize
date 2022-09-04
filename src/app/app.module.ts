@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {MaterialExampleModule} from './material.module';
+import {MaterialExampleModule} from './module/material.module';
 import {SidenavResponsiveExample} from './sidenav-responsive-example';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';

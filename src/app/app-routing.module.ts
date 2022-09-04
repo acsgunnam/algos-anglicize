@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MaterialExampleModule } from './material.module';
+import { MaterialExampleModule } from './third-module/material.module';
 import { HomeComponent } from './home/home.component';
 import { SidenavResponsiveExample } from './sidenav-responsive-example';
 import { CommonModule } from '@angular/common';
